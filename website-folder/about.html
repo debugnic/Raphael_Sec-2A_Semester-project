@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Portfolio</title>
+  <title>Tentang Saya - Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,36 +19,63 @@
           <a href="contact.html">Contact</a>
         </div>
       </div>
+      <div class="lang-switch">
+        <button data-lang="id" class="lang-btn">ID</button>
+        <button data-lang="en" class="lang-btn">EN</button>
+      </div>
     </div>
   </nav>
 
   <section class="section" id="bio">
-    <h2>Biography</h2>
-    <p>Hello! I’m Nicholas, a passionate web developer who enjoys blending design and functionality.
-       I thrive on building clean, responsive websites and experimenting with modern frameworks.</p>
-    <p>My journey started with curiosity about how digital experiences are crafted, and now I focus on
-       creating projects that balance aesthetics with usability.</p>
+    <div class="lang-id">
+      <h2>Biografi</h2>
+      <p>Halo! Saya Nicholas, seorang pengembang web yang menikmati memadukan desain dan fungsionalitas.</p>
+      <p>Perjalanan saya dimulai dari rasa ingin tahu tentang bagaimana pengalaman digital dibangun, dan kini saya fokus membuat proyek yang menyeimbangkan estetika dengan kegunaan.</p>
+    </div>
+    <div class="lang-en">
+      <h2>Biography</h2>
+      <p>Hello! I’m Nicholas, a passionate web developer who enjoys blending design and functionality.</p>
+      <p>My journey started with curiosity about how digital experiences are crafted, and now I focus on creating projects that balance aesthetics with usability.</p>
+    </div>
   </section>
 
   <section class="section" id="skills">
-    <h2>Skills</h2>
-    <p>Here are some of the areas I specialize in:</p>
-    <ul>
-      <li>Front-end development with HTML, CSS, and JavaScript</li>
-      <li>Deploying static sites on platforms like Vercel</li>
-      <li>Responsive design and accessibility best practices</li>
-      <li>Cross-cultural communication and bilingual content creation</li>
-    </ul>
+    <div class="lang-id">
+      <h2>Keahlian</h2>
+      <ul>
+        <li>Front-end dengan HTML, CSS, dan JavaScript</li>
+        <li>Deploy situs statis di platform seperti Vercel</li>
+        <li>Desain responsif dan praktik aksesibilitas</li>
+        <li>Komunikasi lintas budaya dan konten dwibahasa</li>
+      </ul>
+    </div>
+    <div class="lang-en">
+      <h2>Skills</h2>
+      <ul>
+        <li>Front-end development with HTML, CSS, and JavaScript</li>
+        <li>Deploying static sites on platforms like Vercel</li>
+        <li>Responsive design and accessibility best practices</li>
+        <li>Cross-cultural communication and bilingual content creation</li>
+      </ul>
+    </div>
   </section>
 
   <section class="section" id="hobbies">
-    <h2>Hobbies</h2>
-    <p>Outside of coding, I enjoy exploring UI/UX trends, writing about digital media, and contributing
-       to open-source projects. I also love experimenting with animations and creative layouts.</p>
+    <div class="lang-id">
+      <h2>Hobi</h2>
+      <p>Di luar coding, saya suka mengeksplor tren UI/UX, menulis tentang media digital, dan berkontribusi ke proyek open-source.</p>
+    </div>
+    <div class="lang-en">
+      <h2>Hobbies</h2>
+      <p>Outside of coding, I enjoy exploring UI/UX trends, writing about digital media, and contributing to open-source projects.</p>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2023 Portfolio. All rights reserved.</p>
+    <div class="lang-id"><p>&copy; 2023 Portfolio. Seluruh hak cipta.</p></div>
+    <div class="lang-en"><p>&copy; 2023 Portfolio. All rights reserved.</p></div>
   </footer>
+
+  <script src="lang.js"></script>
 </body>
 </html>

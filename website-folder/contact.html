@@ -1,47 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Portfolio</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Me</a>
-                <a href="articles.html">Articles</a>
-                <a href="contact.html">Contact</a>
-            </div>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Portfolio</div>
+
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Menu ▾</a>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="articles.html">Articles</a>
+          <a href="contact.html">Contact</a>
         </div>
-    </nav>
+      </div>
 
-    <!-- Contact Section -->
-    <section class="section">
-        <h2>Contact Me</h2>
-        <p>If you’d like to collaborate, ask questions, or just say hello, feel free to reach out using the form below.</p>
+      <div class="lang-switch" aria-label="Language switcher">
+        <button data-lang="id" class="lang-btn" aria-pressed="false">ID</button>
+        <button data-lang="en" class="lang-btn" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
 
-        <form class="contact-form" action="#" method="post">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required>
+  <!-- Contact -->
+  <main class="section">
+    <!-- Indonesian -->
+    <section class="lang-id article" aria-labelledby="contact-id-title">
+      <h1 id="contact-id-title">Hubungi Saya</h1>
+      <p>Jika ingin berkolaborasi, bertanya, atau sekadar menyapa, silakan kirimkan pesan melalui formulir berikut.</p>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your email address" required>
+      <form class="contact-form" id="contactForm" action="#" method="post" novalidate>
+        <div class="form-field">
+          <label for="name-id">Nama</label>
+          <input type="text" id="name-id" name="name" placeholder="Nama lengkap Anda" required>
+          <small class="error" data-error-for="name"></small>
+        </div>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        <div class="form-field">
+          <label for="email-id">Email</label>
+          <input type="email" id="email-id" name="email" placeholder="Alamat email Anda" required>
+          <small class="error" data-error-for="email"></small>
+        </div>
 
-            <button type="submit" class="cta-button">Send Message</button>
-        </form>
+        <div class="form-field">
+          <label for="message-id">Pesan</label>
+          <textarea id="message-id" name="message" rows="6" placeholder="Tulis pesan Anda di sini..." required></textarea>
+          <small class="error" data-error-for="message"></small>
+        </div>
+
+        <button type="submit" class="cta-button">Kirim Pesan</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 Portfolio. All rights reserved.</p>
-    </footer>
+    <!-- English -->
+    <section class="lang-en article" aria-labelledby="contact-en-title">
+      <h1 id="contact-en-title">Contact Me</h1>
+      <p>If you’d like to collaborate, ask questions, or just say hello, feel free to reach out using the form below.</p>
+
+      <form class="contact-form" id="contactFormEn" action="#" method="post" novalidate>
+        <div class="form-field">
+          <label for="name-en">Name</label>
+          <input type="text" id="name-en" name="name" placeholder="Your full name" required>
+          <small class="error" data-error-for="name"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="email-en">Email</label>
+          <input type="email" id="email-en" name="email" placeholder="Your email address" required>
+          <small class="error" data-error-for="email"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="message-en">Message</label>
+          <textarea id="message-en" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+          <small class="error" data-error-for="message"></small>
+        </div>
+
+        <button type="submit" class="cta-button">Send Message</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="lang-id"><p>&copy; 2023 Portfolio. Seluruh hak cipta.</p></div>
+    <div class="lang-en"><p>&copy; 2023 Portfolio. All rights reserved.</p></div>
+  </footer>
+
+  <script src="lang.js"></script>
+  <script>
+    // Basic client-side validation and simulated submission
+    (function() {
+      const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+      function bindForm(form, messages) {
+        const status = form.querySelector('.form-status');
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = form.querySelector('input[name="name"]');
+          const email = form.querySelector('input[name="email"]');
+          const message = form.querySelector('textarea[name="message"]');
+          let valid = true;
+
+          // Reset errors
+          form.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+          if (!name.value.trim()) {
+            form.querySelector('[data-error-for="name"]').textContent = messages.nameRequired;
+            valid = false;
+          }
+          if (!email.value.trim()) {
+            form.querySelector('[data-error-for="email"]').textContent = messages.emailRequired;
+            valid = false;
+          } else if (!isEmail(email.value.trim())) {
+            form.querySelector('[data-error-for="email"]').textContent = messages.emailInvalid;
+            valid = false;
+          }
+          if (!message.value.trim()) {
+            form.querySelector('[data-error-for="message"]').textContent = messages.messageRequired;
+            valid = false;
+          }
+
+          if (!valid) return;
+
+          // Simulate submission
+          status.textContent = messages.sending;
+          setTimeout(() => {
+            status.textContent = messages.sent;
+            form.reset();
+          }, 800);
+        });
+      }
+
+      // Bind Indonesian form
+      const formId = document.getElementById('contactForm');
+      if (formId) {
+        bindForm(formId, {
+          nameRequired: 'Nama wajib diisi.',
+          emailRequired: 'Email wajib diisi.',
+          emailInvalid: 'Format email tidak valid.',
+          messageRequired: 'Pesan wajib diisi.',
+          sending: 'Mengirim...',
+          sent: 'Terima kasih! Pesan Anda telah dikirim.'
+        });
+      }
+
+      // Bind English form
+      const formEn = document.getElementById('contactFormEn');
+      if (formEn) {
+        bindForm(formEn, {
+          nameRequired: 'Name is required.',
+          emailRequired: 'Email is required.',
+          emailInvalid: 'Please enter a valid email.',
+          messageRequired: 'Message is required.',
+          sending: 'Sending...',
+          sent: 'Thank you! Your message has been sent.'
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
