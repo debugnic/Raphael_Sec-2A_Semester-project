@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav>
     <div class="nav-container">
       <div class="logo">Portfolio</div>
-      <div class="dropdown">
-        <a href="#" class="dropbtn">Menu ▾</a>
-        <div class="dropdown-content">
-          <a href="index.html">Home</a>
-          <a href="about.html">About Me</a>
-          <a href="articles.html">Articles</a>
-          <a href="contact.html">Contact</a>
+
+      <div class="nav-links">
+        <a class="nav-item" href="index.html">Home</a>
+        <a class="nav-item" href="about.html">About</a>
+        <a class="nav-item" href="contact.html">Contact</a>
+
+        <div class="pages-dropdown">
+          <button class="pages-toggle" aria-haspopup="true" aria-expanded="false">Pages ▾</button>
+          <div class="pages-menu" role="menu">
+            <a class="pages-item" role="menuitem" href="index.html">Home</a>
+            <a class="pages-item" role="menuitem" href="about.html">About</a>
+            <a class="pages-item" role="menuitem" href="contact.html">Contact</a>
+            <a class="pages-item" role="menuitem" href="articles.html">Article</a>
+          </div>
         </div>
       </div>
-      <div class="lang-switch">
+
+      <div class="lang-switch" aria-label="Language switcher">
         <button data-lang="id" class="lang-btn">ID</button>
         <button data-lang="en" class="lang-btn">EN</button>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="lang-id">
-        <h1>Desain & Pengembangan</h1>
-        <p>Menciptakan pengalaman digital yang menyeimbangkan estetika dan fungsionalitas</p>
-        <a href="about.html"><button class="cta-button">Lihat Proyek</button></a>
-      </div>
-      <div class="lang-en">
-        <h1>Design & Development</h1>
-        <p>Crafting digital experiences that balance aesthetics with functionality</p>
-        <a href="about.html"><button class="cta-button">View Projects</button></a>
-      </div>
-    </div>
-  </section>
+  <main class="section">
+    <!-- Indonesian preview -->
+    <article class="content-card lang-id">
+      <header class="article-header">
+        <h2><a class="article-link" href="articles.html">Hidup Berdampingan dengan Toleransi</a></h2>
+        <p class="meta"><em>Oleh Raphael Rex Irwanto</em></p>
+      </header>
+      <p class="excerpt">Toleransi adalah sikap saling menghargai yang menjaga persatuan di tengah keberagaman. Artikel ini menjelaskan jenis, praktik sehari-hari, dan peran pendidikan untuk menumbuhkannya.</p>
+      <p><a class="read-more" href="articles.html">Baca selengkapnya →</a></p>
+    </article>
+
+    <!-- English preview -->
+    <article class="content-card lang-en">
+      <header class="article-header">
+        <h2><a class="article-link" href="articles.html">Living Side by Side with Tolerance</a></h2>
+        <p class="meta"><em>By Raphael Rex Irwanto</em></p>
+      </header>
+      <p class="excerpt">Tolerance is a practice of mutual respect that preserves unity amid diversity. This article outlines types, everyday practices, and the role of education in cultivating it.</p>
+      <p><a class="read-more" href="articles.html">Read the full article →</a></p>
+    </article>
+  </main>
 
   <footer>
-    <div class="lang-id"><p>&copy; 2023 Portfolio. Seluruh hak cipta.</p></div>
-    <div class="lang-en"><p>&copy; 2023 Portfolio. All rights reserved.</p></div>
+    <div class="lang-id"><p>&copy; 2025 Portfolio. Seluruh hak cipta.</p></div>
+    <div class="lang-en"><p>&copy; 2025 Portfolio. All rights reserved.</p></div>
   </footer>
 
   <script src="lang.js"></script>
