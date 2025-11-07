@@ -36,10 +36,10 @@
   function showLanguage(lang) {
     hideAllLanguages();
     if (lang === 'id') {
-      document.querySelectorAll('.' + ID_CLASS).forEach(el => { el.style.display = ''; });
+      document.querySelectorAll('.' + ID_CLASS).forEach(el => { el.style.display = 'block'; });
       document.documentElement.lang = 'id';
     } else {
-      document.querySelectorAll('.' + EN_CLASS).forEach(el => { el.style.display = ''; });
+      document.querySelectorAll('.' + EN_CLASS).forEach(el => { el.style.display = 'block'; });
       document.documentElement.lang = 'en';
     }
 
@@ -89,6 +89,9 @@
       return;
     }
 
+    // Mark that JS is ready
+    document.body.classList.add('js-ready');
+
     // Defensive baseline
     hideAllLanguages();
 
@@ -109,7 +112,7 @@
   }
 
   try { init(); } catch (e) {
-    try { document.querySelectorAll('.' + ID_CLASS).forEach(el => el.style.display = ''); document.querySelectorAll('.' + EN_CLASS).forEach(el => el.style.display = ''); } catch (err) {}
+    try { document.querySelectorAll('.' + ID_CLASS).forEach(el => el.style.display = 'block'); document.querySelectorAll('.' + EN_CLASS).forEach(el => el.style.display = 'block'); } catch (err) {}
     console.error('lang.js error:', e);
   }
 })();
