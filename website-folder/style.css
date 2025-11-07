@@ -69,7 +69,8 @@ nav{background:var(--dark-slate);position:sticky;top:0;z-index:1000;box-shadow:v
 footer{margin-top:20px;background:var(--dark-slate);color:#fff;text-align:center;padding:16px;border-top-left-radius:8px;border-top-right-radius:8px}
 
 /* Hide language blocks baseline; JS will show chosen one */
-.lang-id, .lang-en{display:none}
+.lang-id{display:none}
+.lang-en{display:block}
 
 /* Animations */
 @keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
